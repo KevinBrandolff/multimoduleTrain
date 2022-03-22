@@ -1,0 +1,51 @@
+@startuml
+actor client as client
+
+participant profileController
+participant profileService
+participant profileRepository
+participant managementServiceAccount
+
+database ProfileDB
+
+participant userNetflixAPP
+participant userNetflixController
+participant userNetflixService
+participant userNetflixRepository
+
+database userNetflixDB
+
+
+client -> profileController: POST localhost:8082/kevin/profile/2/service/netflix
+profileController-> profileService: addNetflixService()
+profileService -> managementServiceAccount : addNetflixService()
+
+managementServiceAccount -> userNetflixController: POST http://localhost:8083/kevin/userNetflix/
+userNetflixController -> userNetflixService : createUserNetflix()
+userNetflixService -> userNetflixRepository : save()
+userNetflixRepository -> userNetflixDB : persist
+
+userNetflixDB  --> userNetflixRepository : UserNetflixEntity
+userNetflixRepository --> userNetflixService : UserNetflix
+userNetflixService --> userNetflixController : UserNetflix
+userNetflixController --> managementServiceAccount : UserNetflixDTO
+
+managementServiceAccount -> profileRepository : save() [ update Profile with serviceAccount ]
+profileRepository -> ProfileDB : persist
+
+managementServiceAccount -> userNetflixAPP: POST http://localhost:8083/kevin/login
+userNetflixAPP --> managementServiceAccount : token
+
+managementServiceAccount -> userNetflixController: POST http://localhost:8083/kevin/userNetflix/plan/FAMILY
+userNetflixController -> userNetflixService : addPlanToUser()
+userNetflixService -> userNetflixRepository : save()
+userNetflixRepository -> userNetflixDB : persist
+
+userNetflixDB  --> userNetflixRepository : UserNetflixEntity
+userNetflixRepository --> userNetflixService : UserNetflix
+userNetflixService --> userNetflixController : UserNetflix
+userNetflixController --> managementServiceAccount : UserNetflixDTO
+managementServiceAccount --> profileService : Profile
+profileService --> profileController : Profile
+profileController --> client : ProfileDTO
+@enduml

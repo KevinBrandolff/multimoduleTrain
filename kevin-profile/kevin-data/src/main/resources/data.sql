@@ -1,0 +1,1 @@
+insert into profile_kevin( name, age, interests, created_at ) values ( "kevin", 21, "surf", CURDATE() );

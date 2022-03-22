@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/latam_mc_dec_21
+    username: root
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    initialization-mode: always
+    continue-on-error: true

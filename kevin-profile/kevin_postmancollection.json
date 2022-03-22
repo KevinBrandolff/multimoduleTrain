@@ -1,0 +1,392 @@
+{
+	"info": {
+		"_postman_id": "219bd1c3-40f3-461d-a856-da04e2856b39",
+		"name": "Multi Modules MC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Profile",
+			"item": [
+				{
+					"name": "find By iD",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8082/kevin/profile/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"kevin",
+								"profile",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "save a profile",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"kevintestdia\",\r\n    \"age\":22,\r\n    \"interests\":\"cars\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/kevin/profile/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"kevin",
+								"profile",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "save netflix service",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"kevintestdia2\",\r\n    \"password\":\"123456\",\r\n    \"planName\":\"FAMILY\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/kevin/profile/2/service/netflix",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"kevin",
+								"profile",
+								"2",
+								"service",
+								"netflix"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Netflix",
+			"item": [
+				{
+					"name": "UserNetflix",
+					"item": [
+						{
+							"name": "Save userNetflix",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJrZXZpbjMiLCJleHAiOjE2NDUxMTUxODZ9.qtIjIOog2Uke2oZ2Wrs7-hk203EkxiM0YU1ek9ZqSjIQrfm2CtCP7N5csXuPjQkFUfotWlq0vOPRLTH8Tf5-_w",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"kevinteste\",\r\n    \"password\":\"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8083/kevin/userNetflix/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"kevin",
+										"userNetflix",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update userNetflix",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":2,\r\n    \"username\":\"kevinhoouuoooo\",\r\n    \"password\":\"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8083/kevin/userNetflix/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"kevin",
+										"userNetflix",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "find by id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJrZXZpbnRlc3Rub2l0ZSIsImV4cCI6MTY0NTIwMTk5Nn0.EwUEkssU2S4LZgrlXmRTLDPaQNfvUatymaZkkHTXFzSltESrQP5fWdVZieqsqVjGJudeL2G7ehqnHGC2EeCz_w",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8083/kevin/userNetflix/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"kevin",
+										"userNetflix",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete by id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8083/kevin/userNetflix/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"kevin",
+										"userNetflix",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add plan to user",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJrZXZpbjIiLCJleHAiOjE2NDUxMTk1MTV9.R9i6HZYftpcdVR5ftz8wJkHQWhNEoUTZLWQJNz0uaXeOlL-RXqhZtGZfJgIdynVMNVgIrEO_nCD-o-U7enAZaQ",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8083/kevin/userNetflix/plan/FAMILY",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"kevin",
+										"userNetflix",
+										"plan",
+										"FAMILY"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "NetflixPlan",
+					"item": [
+						{
+							"name": "Save a plan",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"planName\":\"FAMILY\",\r\n    \"value\": 30\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8083/kevin/netflixPlan/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"kevin",
+										"netflixPlan",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update a plan",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 1,\r\n    \"planName\":\"PLANAOooo\",\r\n    \"value\": 20070.0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8083/kevin/netflixPlan/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"kevin",
+										"netflixPlan",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "find by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8083/kevin/netflixPlan/100",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"kevin",
+										"netflixPlan",
+										"100"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete by id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8083/kevin/netflixPlan/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"kevin",
+										"netflixPlan",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"kevin2\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/kevin/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"kevin",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
